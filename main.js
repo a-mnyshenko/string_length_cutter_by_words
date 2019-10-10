@@ -6,10 +6,11 @@ function solution(string, num) {
   }
   var reg = new RegExp(`(?=[^ ]).{1,${num}}(?![^ \.])`, 'g');
   var cuttedArr = string.match(reg);
+
   return {
-    initial_str_length: string.length,
-    message_each_part: num,
-    arr_parts: cuttedArr.length,
+    initStrLength: string.length,
+    eachPart: num,
+    arrTotalParts: cuttedArr.length,
     arr: cuttedArr,
   };
 }
