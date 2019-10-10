@@ -1,20 +1,17 @@
 var string = document.querySelector('.t').innerText;
 
-function solution(string, number) {
-  if (string.length < number) {
+function solution(string, num) {
+  if (string.length < num) {
     return -1;
   }
-  var reg = new RegExp(`(?=[^ ]).{1,${number}}(?![^ \.])`, 'g');
-  return string.match(reg);
+  var reg = new RegExp(`(?=[^ ]).{1,${num}}(?![^ \.])`, 'g');
+  var cuttedArr = string.match(reg);
+  return {
+    initial_str_length: string.length,
+    message_each_part: num,
+    arr_parts: cuttedArr.length,
+    arr: cuttedArr,
+  };
 }
 
-(function test(number) {
-  var arr = solution(string, number);
-  var i = 0;
-  arr.forEach((element) => {
-    if (element > number) {
-      console.error('error');
-    }
-    console.log(element);
-  });
-})(1000);
+console.log(solution(string, 100));
