@@ -1,6 +1,6 @@
 var string = document.querySelector('.t').innerText;
 
-function solution(string, num) {
+const solution = (string, num) => {
   if (string.length < num) {
     return -1;
   }
@@ -13,6 +13,6 @@ function solution(string, num) {
     arrTotalParts: cuttedArr.length,
     arr: cuttedArr,
   };
-}
+};
 
 console.log(solution(string, 100));
