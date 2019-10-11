@@ -5,14 +5,12 @@ const solution = (string, num) => {
     return -1;
   }
   var reg = new RegExp(`(?=[^ ]).{1,${num}}(?![^ \.])`, 'g');
+  var re = /(?=[^ ]).{1,50}(?![^ \.])/g;
   var cuttedArr = string.match(reg);
-
-  return {
-    initStrLength: string.length,
-    eachPart: num,
-    arrTotalParts: cuttedArr.length,
-    arr: cuttedArr,
-  };
+  cuttedArr.forEach((element) => {
+    element.replace(/[\t\v\n]/gm, ' ');
+  });
+  return { arrTotalParts: cuttedArr.length, arr: cuttedArr };
 };
 
-console.log(solution(string, 100));
+console.log(solution(string, 500));
