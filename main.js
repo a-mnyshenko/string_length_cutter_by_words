@@ -1,17 +1,11 @@
-var string = document.querySelector('.text').innerHTML;
+var S = document.querySelector('.text').innerHTML;  //  .innerHTML will give to us bad formated text, i use it for test
 
-const solution = (string, num) => {
-  if (string.length < num) {
+const solution = (S, K) => {
+  if (S.length < K) {
     return -1;
   }
-  var reg = new RegExp(`(?=[^ ]).{1,${num}}(?![^ \.])`, 'g');
-  var cuttedArr = string
-    .replace(/[\t\v\n\s]+/g, ' ')
-    .trim()
-    .match(reg);
-
-  return { arrTotalParts: cuttedArr.length, arr: cuttedArr };
-  console.log(str3);
+  var reg = new RegExp(`(?=[^ ]).{1,${K}}(?![^ \.])`, 'g');
+  var arr = S.replace(/[\t\v\n\s]+/g, ' ').trim().match(reg);
+  return { arrParts: arr.length, arr: arr };
 };
-
-console.log(solution(string, 50));
+console.log(solution(S, 100));
