@@ -1,4 +1,4 @@
-var S = document.querySelector('.text').innerHTML; //  .innerHTML will give to us bad formated text, i use it for test
+var S = document.querySelector('.text').innerHTML; //  .innerHTML will give bad formated text for us, i use it for test
 
 const solution = (S, K) => {
   if (S.length < K) {
